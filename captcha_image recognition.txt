@@ -1,0 +1,76 @@
+Dataset:-
+
+https://services.ecourts.gov.in/ecourtindia_v4_bilingual/cases/case_no.php?state=D&state_cd=9&dist_cd=6
+
+https://services.ecourts.gov.in/ecourtindia_v6/
+
+https://bombayhighcourt.nic.in/index.php
+
+
+
+
+KERNEL 2
+
+DOWNSAMPLE_FACTOR
+# Factor by which the image is going to be downsampled
+# by the convolutional blocks. We will be using two
+# convolution blocks and each block will have
+# a pooling layer which downsample the features by a factor of 2.
+# Hence total downsampling factor would be 4.
+
+KERNEL 4
+Creation of dataset samples
+
+
+KERNEL 6
+call() funtion computes the train time, loss value and additive layer.
+In model building the model  uses 2D convulation blocks and a dimensional layer and show how to initialise the layers
+
+
+KERNEL 7
+to train a RNN using a some no. of EPOCHS
+And main training layer of the RNN
+
+
+PRECTION KERNEL
+Gets prediction by extracting the layers till the o/t layer by decoding th batch.
+
+
+RNN  (https://www.geeksforgeeks.org/introduction-to-recurrent-neural-network/)
+
+Recurrent Neural Network(RNN) are a type of Neural Network where the output
+from previous step are fed as input to the current step.
+
+ In traditional neural networks, all the inputs and outputs are independent of 
+each other, but in cases like when it is required to predict the next word of a
+ sentence, the previous words are required and hence there is a need to remember
+ the previous words. Thus RNN came into existence, which solved this issue with
+ the help of a Hidden Layer.
+
+
+The hidden layers perform nonlinear transformations of the inputs entered 
+into the network. Hidden layers vary depending on the function of the neural 
+network, and similarly, the layers may vary depending on their associated weights.\
+
+An RNN remembers each and every information through time.
+ It is useful in time series prediction only because of the feature to remember
+ previous inputs as well. This is called Long Short Term Memory.
+
+Training through RNN
+
+   1. A single time step of the input is provided to the network.
+   2. Then calculate its current state using set of current input and the previous state.
+   3. The current ht becomes ht-1 for the next time step.
+   4. One can go as many time steps according to the problem and join the information from all the previous states.
+   5. Once all the time steps are completed the final current state is used to calculate the output.
+   6. The output is then compared to the actual output i.e the target output and the error is generated.
+   7. The error is then back-propagated to the network to update the weights and
+ hence the network (RNN) is trained.
+
+
+
+CTC Loss  (dosent require aligned dataset)
+A valuable operation to tackel sequence problems where timing is variable.
+
+Its is designed for tasks where we need alignment between sequences, but where that alignment 
+is difficult - e.g. aligning each character to its location in a captcha.
